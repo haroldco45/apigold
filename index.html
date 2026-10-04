@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="es-CO">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Apigold — Miel de Remedios, del panal a tu mesa</title>
+<meta name="description" content="Miel 100% natural de Apigold, proyecto apícola sostenible de Remedios, Antioquia. Pide por WhatsApp.">
+<meta name="theme-color" content="#E8961E">
+<link rel="manifest" href="manifest.json">
+<link rel="icon" href="img/icon-192.png">
+<link rel="apple-touch-icon" href="img/icon-192.png">
+<meta property="og:title" content="Apigold — del panal a tu mesa">
+<meta property="og:description" content="Miel 100% natural de Remedios, Antioquia. Pide la tuya por WhatsApp.">
+<meta property="og:image" content="img/puesto.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Young+Serif&family=Nunito+Sans:opsz,wght@6..12,400;6..12,600;6..12,800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --miel:#E8961E; --miel-osc:#B8680A; --propoleo:#6B3410; --cera:#FBEFC4;
+  --cera-2:#F6E2A0; --bosque:#1F4A2C; --tinta:#2A1A0C; --blanco:#FFFDF6;
+  --serif:"Young Serif", Georgia, "Times New Roman", serif;
+  --sans:"Nunito Sans", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  box-sizing:border-box;
+}
+*,*::before,*::after{box-sizing:inherit}
+html{scroll-behavior:smooth;scroll-padding-top:calc(64px + env(safe-area-inset-top,0px))}
+body{margin:0;background:var(--cera);color:var(--tinta);font-family:var(--sans);font-size:17px;line-height:1.55;-webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--bosque);outline-offset:3px;border-radius:4px}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
+
+/* Barra superior */
+.top{position:fixed;top:0;left:0;right:0;z-index:20;padding-top:env(safe-area-inset-top,0px);
+  background:rgba(251,239,196,.92);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-bottom:1px solid rgba(107,52,16,.12)}
+.top-in{max-width:1100px;margin:0 auto;height:60px;display:flex;align-items:center;gap:12px;padding:0 18px}
+.top-in img{width:42px;height:auto}
+.top-in strong{font-family:var(--serif);font-weight:400;font-size:1.3rem;color:var(--propoleo)}
+.top nav{margin-left:auto;display:flex;gap:18px}
+.top nav a{text-decoration:none;font-weight:600;font-size:.95rem;color:var(--propoleo)}
+@media(max-width:720px){.top nav{display:none}}
+
+/* Hero */
+.hero{position:relative;min-height:100svh;display:grid;align-items:end;color:var(--blanco);overflow:hidden}
+.hero>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:60% 55%;transform:scale(1.06);animation:acerca 2.4s ease-out forwards}
+@keyframes acerca{to{transform:scale(1)}}
+.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(42,26,12,.05) 30%,rgba(42,26,12,.82) 88%)}
+.hero-txt{position:relative;z-index:1;max-width:1100px;width:100%;margin:0 auto;padding:0 22px calc(44px + env(safe-area-inset-bottom,0px))}
+.hero h1{font-family:var(--serif);font-weight:400;font-size:clamp(3rem,11vw,6.5rem);line-height:.95;margin:0 0 .25em;letter-spacing:-.01em}
+.hero p{font-size:clamp(1.05rem,2.6vw,1.3rem);max-width:34ch;margin:0 0 1.4em}
+.lugar{display:inline-block;font-weight:600;font-size:.95rem;margin-bottom:1em;padding:.3em .8em;border-radius:99px;background:rgba(31,74,44,.85)}
+.btns{display:flex;flex-wrap:wrap;gap:12px}
+.btn{display:inline-flex;align-items:center;gap:.5em;font-family:var(--sans);font-weight:800;font-size:1rem;text-decoration:none;border:0;cursor:pointer;
+  padding:.95em 1.5em;border-radius:14px;background:var(--miel);color:var(--tinta)}
+.btn:hover{background:#F2A63A}
+.btn.claro{background:rgba(255,253,246,.16);color:var(--blanco);border:1.5px solid rgba(255,253,246,.6)}
+.btn.verde{background:var(--bosque);color:var(--blanco)}
+.btn svg{width:20px;height:20px;flex:none}
+
+/* Secciones */
+section{padding:84px 22px}
+.in{max-width:1100px;margin:0 auto}
+h2{font-family:var(--serif);font-weight:400;font-size:clamp(2rem,5.5vw,3.2rem);line-height:1.05;margin:0 0 .4em;color:var(--propoleo)}
+.lead{font-size:1.15rem;max-width:58ch;margin:0 0 2em}
+
+/* Panal: la firma visual */
+.panal{display:grid;grid-template-columns:1.1fr 1fr;gap:48px;align-items:center}
+.hex{aspect-ratio:1/1.1547;clip-path:polygon(50% 0,100% 25%,100% 75%,50% 100%,0 75%,0 25%);background:var(--miel);padding:12px}
+.hex img{width:100%;height:100%;object-fit:cover;clip-path:inherit}
+.datos{display:grid;gap:22px;margin-top:8px}
+.dato{display:grid;grid-template-columns:44px 1fr;gap:14px;align-items:start}
+.dato i{width:44px;height:50px;clip-path:polygon(50% 0,100% 25%,100% 75%,50% 100%,0 75%,0 25%);background:var(--cera-2);display:grid;place-items:center;font-style:normal;font-size:1.3rem}
+.dato h3{margin:0 0 .15em;font-size:1.08rem}
+.dato p{margin:0;color:#5a432c}
+@media(max-width:820px){.panal{grid-template-columns:1fr}.hex{max-width:420px;margin:0 auto}}
+
+/* Configurador */
+.config{background:var(--propoleo);color:var(--blanco)}
+.config h2{color:var(--cera)}
+.conf{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:start}
+.vista{position:relative;border-radius:22px;overflow:hidden;background:#3d1d08}
+.vista img{width:100%;aspect-ratio:4/3;object-fit:cover;object-position:var(--pos,50% 60%);transition:object-position .5s ease}
+.vista span{position:absolute;left:14px;bottom:14px;background:var(--miel);color:var(--tinta);font-weight:800;padding:.35em .9em;border-radius:10px}
+fieldset{border:0;margin:0 0 22px;padding:0}
+legend{font-weight:800;margin-bottom:10px;font-size:1.02rem}
+.opc{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.opc label{cursor:pointer}
+.opc input{position:absolute;opacity:0}
+.opc span{display:block;text-align:center;padding:14px 8px;border-radius:14px;border:2px solid rgba(251,239,196,.3);font-weight:600;line-height:1.25}
+.opc span small{display:block;font-weight:400;opacity:.8;font-size:.82rem}
+.opc input:checked+span{border-color:var(--miel);background:rgba(232,150,30,.18)}
+.opc input:focus-visible+span{outline:3px solid var(--cera);outline-offset:2px}
+.cant{display:flex;align-items:center;gap:14px}
+.cant button{width:46px;height:46px;border-radius:12px;border:2px solid rgba(251,239,196,.4);background:transparent;color:var(--blanco);font-size:1.4rem;cursor:pointer}
+.cant output{font-family:var(--serif);font-size:1.8rem;min-width:2ch;text-align:center}
+.campo{display:grid;gap:6px;margin-bottom:14px}
+.campo input{font:inherit;padding:.8em 1em;border-radius:12px;border:2px solid rgba(251,239,196,.3);background:rgba(255,253,246,.06);color:var(--blanco)}
+.campo input::placeholder{color:rgba(251,239,196,.55)}
+.nota{font-size:.92rem;opacity:.85;margin:.8em 0 0}
+@media(max-width:820px){.conf{grid-template-columns:1fr}}
+
+/* Videos */
+.videos{background:var(--cera-2)}
+.vgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:24px}
+.vcard{background:var(--blanco);border-radius:20px;overflow:hidden;border:1px solid rgba(107,52,16,.15)}
+.vcard iframe{width:100%;height:620px;border:0;display:block;background:#fff}
+.vcard a{display:block;padding:14px 18px;font-weight:700;color:var(--propoleo);text-decoration:none;border-top:1px solid rgba(107,52,16,.12)}
+
+/* Foto completa */
+.foto{padding:0}
+.foto figure{margin:0;position:relative}
+.foto img{width:100%;max-height:80vh;object-fit:cover}
+.foto figcaption{position:absolute;right:16px;bottom:14px;color:var(--blanco);font-size:.9rem;text-shadow:0 1px 6px rgba(0,0,0,.6)}
+
+/* Contacto */
+.contacto .lista{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:14px}
+.contacto a.item{display:block;text-decoration:none;padding:20px;border-radius:18px;background:var(--blanco);border:1px solid rgba(107,52,16,.15)}
+.item b{display:block;font-size:.9rem;color:var(--miel-osc);margin-bottom:4px}
+.item span{font-size:1.1rem;font-weight:700;word-break:break-word}
+
+footer{background:var(--tinta);color:var(--cera);padding:34px 22px calc(100px + env(safe-area-inset-bottom,0px));text-align:center;font-size:.92rem}
+footer a{color:var(--miel)}
+
+/* Botón flotante */
+.flota{position:fixed;right:16px;bottom:calc(16px + env(safe-area-inset-bottom,0px));z-index:30;width:60px;height:60px;border-radius:50%;
+  background:#25D366;display:grid;place-items:center;box-shadow:0 6px 20px rgba(0,0,0,.25)}
+.flota svg{width:32px;height:32px;fill:#fff}
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="top-in">
+    <img src="img/logo.png" alt="" width="42" height="36">
+    <strong>Apigold</strong>
+    <nav aria-label="Secciones">
+      <a href="#nosotros">Nosotros</a>
+      <a href="#pedido">Arma tu pedido</a>
+      <a href="#videos">Videos</a>
+      <a href="#contacto">Contacto</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="hero" aria-label="Presentación">
+    <img src="img/puesto.jpg" alt="Frascos de miel Apigold en un puesto frente a la iglesia de Remedios">
+    <div class="hero-txt">
+      <span class="lugar">Remedios, Antioquia</span>
+      <h1>Del panal<br>a tu mesa</h1>
+      <p>Miel 100% natural de un proyecto apícola que cuida el monte, las abejas y la flora del nordeste antioqueño.</p>
+      <div class="btns">
+        <a class="btn" href="#pedido">Arma tu pedido</a>
+        <a class="btn claro" href="#videos">Ver videos</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="nosotros">
+    <div class="in panal">
+      <div class="hex"><img src="img/frascos.jpg" alt="Frascos de miel Apigold dentro de un marco hexagonal de madera" loading="lazy"></div>
+      <div>
+        <h2>Miel de aquí, hecha con respeto</h2>
+        <p class="lead">Apigold es un emprendimiento apícola de Remedios. Trabajamos para aprovechar los recursos naturales de forma sostenible, protegiendo la fauna y la flora de la región.</p>
+        <div class="datos">
+          <div class="dato"><i aria-hidden="true">🍯</i><div><h3>100% natural</h3><p>Miel pura, envasada tal como sale del panal.</p></div></div>
+          <div class="dato"><i aria-hidden="true">🐝</i><div><h3>Abejas bien cuidadas</h3><p>Apicultura responsable en la zona rural de Remedios.</p></div></div>
+          <div class="dato"><i aria-hidden="true">🌳</i><div><h3>Cuidamos el monte</h3><p>Producir sin dañar los bosques ni los animales de la región.</p></div></div>
+          <div class="dato"><i aria-hidden="true">📚</i><div><h3>Enseñamos apicultura</h3><p>Queremos ser un lugar de formación apícola para el nordeste.</p></div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="config" id="pedido">
+    <div class="in">
+      <h2>Arma tu pedido</h2>
+      <p class="lead">Elige el tamaño y cuántos frascos quieres. Te confirmamos precio y entrega por WhatsApp.</p>
+      <div class="conf">
+        <div class="vista" id="vista" style="--pos:80% 70%">
+          <img src="img/puesto.jpg" alt="Frascos de miel Apigold de tres tamaños">
+          <span id="etq">Frasco grande</span>
+        </div>
+        <form id="form" onsubmit="return false">
+          <fieldset>
+            <legend>Tamaño del frasco</legend>
+            <div class="opc">
+              <label><input type="radio" name="t" value="Frasco pequeño" data-pos="62% 85%"><span>Pequeño<small>para probar</small></span></label>
+              <label><input type="radio" name="t" value="Frasco mediano" data-pos="48% 75%"><span>Mediano<small>para la casa</small></span></label>
+              <label><input type="radio" name="t" value="Frasco grande" data-pos="80% 70%" checked><span>Grande<small>para la familia</small></span></label>
+            </div>
+          </fieldset>
+          <fieldset>
+            <legend>Cantidad</legend>
+            <div class="cant">
+              <button type="button" id="menos" aria-label="Quitar un frasco">−</button>
+              <output id="num" aria-live="polite">1</output>
+              <button type="button" id="mas" aria-label="Agregar un frasco">+</button>
+            </div>
+          </fieldset>
+          <div class="campo"><label for="nom">Tu nombre</label><input id="nom" autocomplete="name" placeholder="Ej: María Gómez"></div>
+          <div class="campo"><label for="mun">¿Dónde lo recibes?</label><input id="mun" placeholder="Ej: Remedios, Segovia, Medellín"></div>
+          <button type="button" class="btn" id="enviar">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm5.4 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .2-3.3-.7-2.8-1.1-4.5-3.9-4.7-4.1-.1-.2-1.1-1.5-1.1-2.9s.7-2 1-2.3c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 2c.1.2.1.4 0 .5l-.3.5-.4.4c-.1.1-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.3 2.4 1.5.3.1.5.1.6-.1l.9-1c.2-.3.4-.2.6-.1l1.9.9c.3.1.5.2.5.3.1.2.1.7-.1 1.3Z"/></svg>
+            Pedir por WhatsApp
+          </button>
+          <p class="nota">Precios y envío se confirman en el chat. Hacemos entregas en Remedios y coordinamos envíos a otros municipios.</p>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <section class="foto" aria-label="Foto del puesto">
+    <figure>
+      <img src="img/puesto.jpg" alt="Puesto de Apigold con el letrero y frascos de miel en el parque de Remedios" loading="lazy">
+      <figcaption>Nuestro puesto en el parque de Remedios</figcaption>
+    </figure>
+  </section>
+
+  <section class="videos" id="videos">
+    <div class="in">
+      <h2>Míranos trabajar</h2>
+      <p class="lead">Videos y publicaciones reales de nuestro Instagram @apigoldremedios.</p>
+      <div class="vgrid">
+        <div class="vcard">
+          <iframe src="https://www.instagram.com/reel/Dbi6jhjPaVR/embed" title="Video de Apigold en Instagram" loading="lazy" allowfullscreen></iframe>
+          <a href="https://www.instagram.com/reel/Dbi6jhjPaVR/" target="_blank" rel="noopener">Abrir el video en Instagram</a>
+        </div>
+        <div class="vcard">
+          <iframe src="https://www.instagram.com/p/CoPkA4wuMf9/embed" title="Publicación de Apigold en Instagram" loading="lazy" allowfullscreen></iframe>
+          <a href="https://www.instagram.com/p/CoPkA4wuMf9/" target="_blank" rel="noopener">Abrir la publicación en Instagram</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="contacto" id="contacto">
+    <div class="in">
+      <h2>Hablemos</h2>
+      <p class="lead">Escríbenos para pedidos, visitas o cursos de apicultura.</p>
+      <div class="lista">
+        <a class="item" href="https://wa.me/573196627228?text=Hola%20Apigold%2C%20quiero%20informaci%C3%B3n%20sobre%20la%20miel" target="_blank" rel="noopener"><b>WhatsApp</b><span>319 662 7228</span></a>
+        <a class="item" href="tel:+573196627228"><b>Llamar</b><span>319 662 7228</span></a>
+        <a class="item" href="mailto:claudia11nov74@gmail.com"><b>Correo</b><span>claudia11nov74@gmail.com</span></a>
+        <a class="item" href="https://www.instagram.com/apigoldremedios/" target="_blank" rel="noopener"><b>Instagram</b><span>@apigoldremedios</span></a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <p>Apigold · Remedios, Antioquia, Colombia</p>
+  <p>App hecha por <a href="https://wa.me/573117700431" target="_blank" rel="noopener">Vibras Positivas HM</a> · 311 770 0431</p>
+  <p id="hora"></p>
+</footer>
+
+<a class="flota" href="https://wa.me/573196627228?text=Hola%20Apigold%2C%20quiero%20pedir%20miel" target="_blank" rel="noopener" aria-label="Escribir a Apigold por WhatsApp">
+  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm5.4 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .2-3.3-.7-2.8-1.1-4.5-3.9-4.7-4.1-.1-.2-1.1-1.5-1.1-2.9s.7-2 1-2.3c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 2c.1.2.1.4 0 .5l-.3.5-.4.4c-.1.1-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.3 2.4 1.5.3.1.5.1.6-.1l.9-1c.2-.3.4-.2.6-.1l1.9.9c.3.1.5.2.5.3.1.2.1.7-.1 1.3Z"/></svg>
+</a>
+
+<script>
+const WA = "573196627228";
+let n = 1;
+const num = document.getElementById("num"), vista = document.getElementById("vista"), etq = document.getElementById("etq");
+document.getElementById("mas").onclick = () => { if (n < 50) num.textContent = ++n; };
+document.getElementById("menos").onclick = () => { if (n > 1) num.textContent = --n; };
+document.querySelectorAll('input[name="t"]').forEach(r => r.addEventListener("change", () => {
+  vista.style.setProperty("--pos", r.dataset.pos); etq.textContent = r.value;
+}));
+document.getElementById("enviar").onclick = () => {
+  const t = document.querySelector('input[name="t"]:checked').value;
+  const nom = document.getElementById("nom").value.trim();
+  const mun = document.getElementById("mun").value.trim();
+  const ahora = new Date().toLocaleString("es-CO", { timeZone: "America/Bogota", dateStyle: "medium", timeStyle: "short" });
+  let msg = `Hola Apigold 🍯, quiero hacer un pedido:\n• ${t} x ${n}`;
+  if (nom) msg += `\n• Nombre: ${nom}`;
+  if (mun) msg += `\n• Entrega en: ${mun}`;
+  msg += `\n¿Me confirman precio y envío? (${ahora}, hora de Colombia)`;
+  window.open(`https://wa.me/${WA}?text=${encodeURIComponent(msg)}`, "_blank");
+};
+document.getElementById("hora").textContent = "Hora de Colombia: " +
+  new Date().toLocaleString("es-CO", { timeZone: "America/Bogota", dateStyle: "full", timeStyle: "short" });
+if ("serviceWorker" in navigator) navigator.serviceWorker.register("sw.js").catch(() => {});
+</script>
+</body>
+</html>
