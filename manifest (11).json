@@ -1,0 +1,15 @@
+{
+  "name": "Apigold — del panal a tu mesa",
+  "short_name": "Apigold",
+  "description": "Miel 100% natural de Remedios, Antioquia",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#FBEFC4",
+  "theme_color": "#E8961E",
+  "lang": "es-CO",
+  "icons": [
+    {"src": "icon-192.png", "sizes": "192x192", "type": "image/png"},
+    {"src": "icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any maskable"}
+  ]
+}
